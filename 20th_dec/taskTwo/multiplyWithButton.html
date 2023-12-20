@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculate It</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        flex-direction: column;
+      }
+
+      label {
+        margin-bottom: 8px;
+      }
+
+      input {
+        padding: 8px;
+        margin-bottom: 16px;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="price">Price:</label>
+    <input type="text" id="price" placeholder="Enter price" />
+
+    <button onclick="calculate()">Calculate</button>
+
+    <script>
+      function calculate() {
+        var priceInput = document.getElementById("price").value;
+
+        var price = parseFloat(priceInput);
+
+        if (!isNaN(price)) {
+          var result = price * 1.8;
+
+          alert("Result: " + result.toFixed(2));
+        } else {
+          alert("Not a valid input. Please enter a number.");
+        }
+      }
+    </script>
+  </body>
+</html>
